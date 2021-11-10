@@ -1,0 +1,215 @@
+/* permet de cree des variables a la racine du document (balise html) */
+:root{
+    --dark: #374151;
+    --darker: #1F2937;
+    --darkest: #111827;
+    --gray: #6B7280;
+    --light: #EEE;
+    --pink: #EC4899;
+    --purple: #8B5CF6;
+}
+
+*{
+    box-sizing: border-box;
+    margin: 0;
+    font-family: 'Fira sans', sans-serif;
+}
+
+body{
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh;
+    background: var(--dark);
+    color: #FFF;
+}
+
+header{
+    padding: 2rem 1rem; /* equivaut a 20px et 10px  */
+    max-width: 800px;
+    width: 100%;
+    margin: 0 auto;
+}
+
+header h1{
+    font-size: 2.5rem;
+    font-weight: 300;
+    color: var(--gray);
+    margin-bottom: 1rem;
+}
+
+#todo_form{
+    display: flex;
+   
+}
+
+input, button{
+    appearance: none;
+    border: none;
+    outline: none;
+    background: none;
+}
+
+#todo_input{
+    flex: 1 1 0%;
+    background-color: var(--darker);
+    padding: 1rem;
+    border-radius: 1rem;
+    margin-right: 1rem;
+    color: var(--light);
+    font-size: 1.25rem;
+}
+
+#tod_input::placeholder{
+    color: var(--gray);
+}
+
+#todo_submit{
+    color: var(--pink);
+    font-size: 1.55rem;
+    font-weight: 700;
+    transition: 0.4s;
+    background-image: linear-gradient(to right, var(--pink), var(--purple));
+    -webkit-background-clip: text; /* permet de rendre le l'interieur du text */
+    -webkit-text-fill-color: transparent; /* permet d'ajouter le bg-image sur le texte du btn */
+    cursor: pointer;
+}
+#todo_submit .icon_add{
+    font-size: 3rem;
+    transition: 0.4s;
+}
+#todo_submit .icon_add:hover{
+    opacity: 0.5;
+}
+#todo_submit:active{
+    opacity: 0.5;
+}
+
+main{
+    flex: 1 1 0%;
+    padding: 2rem 1rem;
+    max-width: 800px;
+    width: 100%;
+    margin: 0 auto;
+}
+
+.todo_list{
+    padding: 1rem;
+}
+.todo_list h2{
+    font-size: 1.5rem;
+    font-weight: 300;
+    color: var(--gray);
+    margin-bottom: 1rem;
+}
+
+#todos .todo{
+    display: flex;
+    justify-content: space-between;
+    background-color: var(--darkest);
+    padding: 1rem;
+    border-radius: 1rem;
+    margin-bottom: 1rem;
+}
+
+#todos .todo .content{
+    flex: 1 1 0%;
+}
+
+
+#todos .todo .content .text{
+    color: var(--light);
+    font-size: 1.125rem;
+    width: 100%;
+    display: block;
+    transition: 0.4s;
+}
+
+#todos .todo .content .text:not(:read-only){
+    color: var(--pink);
+}
+
+#todos .todo .action{
+    display: flex;
+    margin: 0 -0.5rem;
+}
+
+.action .icon{
+    font-size: 1.5rem;
+    transition: 0.4s;
+}
+.todo .action .edit{
+    background-image: linear-gradient(to right, var(--pink), var(--purple));
+    -webkit-background-clip: text; /* permet de rendre le l'interieur du text */
+    -webkit-text-fill-color: transparent; /* permet d'ajouter le bg-image sur le texte du btn */
+    cursor: pointer;
+}
+.todo .action .delete{
+    color: crimson;
+}
+
+#todos .todo button{
+    cursor: pointer;
+    margin: 0 0.5rem;
+    font-size: 1.125rem;
+    font-weight: 700;
+    text-transform: uppercase;
+    transition: 0.4s;
+}
+
+
+#todos .todo button:hover{
+    opacity: 0.6;
+}
+#todos .todo button:active{
+    opacity: 0.6;
+}
+
+.content input{
+    cursor: pointer;
+}
+
+.done{
+    background-image: linear-gradient(to right, var(--pink), var(--purple));
+    -webkit-background-clip: text; /* permet de rendre le l'interieur du text */
+    -webkit-text-fill-color: transparent; /* permet d'ajouter le bg-image sur le texte du btn */
+    cursor: pointer;
+}
+
+.todobtn{
+    background-image: linear-gradient(to right, var(--pink), var(--purple));
+    -webkit-background-clip: text; /* permet de rendre le l'interieur du text */
+    -webkit-text-fill-color: transparent; /* permet d'ajouter le bg-image sur le texte du btn */
+    cursor: pointer;
+}
+
+.borderDone{
+    border: 5px solid green;
+}
+
+.BorderTodo{
+    border: 5px solid blue;
+}
+
+
+todo_form{
+    position: relative;
+}
+
+.filter{
+    position: absolute;
+    top: 170px;
+    width: 100%;
+}
+
+.filterBtn{
+    cursor: pointer;
+    padding: 10px;
+    margin-right: 10px;
+    width: 80px;
+    font-size: 20px;
+    font-weight: bold;
+    background-image: linear-gradient(to right, var(--pink), var(--purple));
+    -webkit-background-clip: text; /* permet de rendre le l'interieur du text */
+    -webkit-text-fill-color: transparent; /* permet d'ajouter le bg-image sur le texte du btn */
+    cursor: pointer;
+}
