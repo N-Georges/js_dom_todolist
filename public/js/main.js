@@ -50,7 +50,7 @@ window.addEventListener('load', () => {
         list_el.appendChild(task_el) // ajout de la div .todo a la div .todos
 
         input.value = ''
-        
+
         task_input_el.addEventListener('dblclick', () => {
             if (task_edit_el.innerText.toLowerCase() == 'edit') {
                 task_input_el.removeAttribute('readonly')
@@ -88,8 +88,33 @@ window.addEventListener('load', () => {
             if (children.includes(task_el)) {
                 list_el.removeChild(task_el)
             }
-            // list_el.innerHTML =''
-
         })
+
+        // filtre les taches Done
+        let done_filter = document.querySelector('#done')
+        done_filter.addEventListener('click', () => {
+            console.log(task_el);
+            if (task_el.classList.contains('borderDone') != true) {
+                task_el.style.display = 'none'    
+            }
+        })
+        // filtre les taches Todo
+        let todo_filter = document.querySelector('#todo')
+        todo_filter.addEventListener('click', () => {
+            console.log(task_el);
+
+            if (task_el.classList.contains('borderDone') == true) {
+                task_el.style.display = 'none'    
+            }
+        })
+        // reaffiche toute les taches
+        let all_filter = document.querySelector('#all')
+        
+        all_filter.addEventListener('click', () => {
+            console.log(task_el);
+
+            task_el.style.display = 'flex'
+        })
+
     })
 })
