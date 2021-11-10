@@ -50,5 +50,46 @@ window.addEventListener('load', () => {
         list_el.appendChild(task_el) // ajout de la div .todo a la div .todos
 
         input.value = ''
+        
+        task_input_el.addEventListener('dblclick', () => {
+            if (task_edit_el.innerText.toLowerCase() == 'edit') {
+                task_input_el.removeAttribute('readonly')
+                task_input_el.focus()
+                task_edit_el.innerText = 'Save'
+            }else{
+                task_input_el.setAttribute('readonly', '')
+                task_edit_el.innerText = 'Edit'
+            }
+        })
+        // supprime l'attribut readonly pour pouvoir ecrire dans l'input
+        task_edit_el.addEventListener('click', () => {
+            if (task_edit_el.innerText.toLowerCase() == 'edit') {
+                task_input_el.removeAttribute('readonly')
+                task_input_el.focus()
+                task_edit_el.innerText = 'Save'
+            }else{
+                task_input_el.setAttribute('readonly', '')
+                task_edit_el.innerText = 'Edit'
+            }
+        })
+
+        // quand le btn delete est appuyer on supprimer la div .todo
+        task_delete_el.addEventListener('click', () => {
+            list_el.removeChild(task_el)
+        })
+        done.addEventListener('click', () => {
+            task_el.classList.toggle('borderDone')
+        })   
+        
+        let clear = document.querySelector('#clear')
+        clear.addEventListener('click', () => {
+            let children = Array.from(list_el.children)
+            // console.log(children.includes(task_el));
+            if (children.includes(task_el)) {
+                list_el.removeChild(task_el)
+            }
+            // list_el.innerHTML =''
+
+        })
     })
 })
